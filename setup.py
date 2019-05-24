@@ -17,7 +17,7 @@ setuptools.setup(
      include_package_data=True,
      classifiers=[
          "Programming Language :: Python :: 3",
-         "License :: LGPL-3.0",
-         "Operating System :: Linux",
+         "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+        "Operating System :: POSIX :: Linux",
      ],
  )

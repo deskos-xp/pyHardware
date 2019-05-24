@@ -37,6 +37,6 @@ Description: # pyHardware
         
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
-Classifier: License :: LGPL-3.0
-Classifier: Operating System :: Linux
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Operating System :: POSIX :: Linux
 Description-Content-Type: text/markdown
