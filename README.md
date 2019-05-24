@@ -11,7 +11,7 @@ dmidcode_data=dmidecode_reader.getDmidecode().parsed
 bios_info={i:dmidecode_data[i] for i in dmidecode_data.keys() if i.endswith('bios_info')}
 ```
 
-To get cpu information you will need the related package that installs ```lscpu```.
+To get cpu information.
 
 ```python
 from hw import cpu_reader

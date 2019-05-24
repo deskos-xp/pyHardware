@@ -1,0 +1,2 @@
+include hw/etc
+recursive-include hw/etc/ *
