@@ -3,8 +3,7 @@ a rewrite of python-hwinfo to support python3
 
 To get dmidecode info, you will need sudo/root
 
-```
-python
+```python
 from hw import dmidecode_reader
 
 dmidcode_data=dmidecode_reader.getDmidecode().parsed
@@ -20,8 +19,7 @@ cpu_data=cpu_reader.getCpu().parsed
 ```
 
 To get PCI information
-```
-python
+```python
 from hw import lspci_reader
 lspci_data=lspci_reader.getLspci().parsed
 ```
