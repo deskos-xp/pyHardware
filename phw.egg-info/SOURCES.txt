@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+hw/__init__.py
+hw/cpu_reader.py
+hw/dmidecode_reader.py
+hw/lspci_reader.py
+hw/etc/commands.json
+phw.egg-info/PKG-INFO
+phw.egg-info/SOURCES.txt
+phw.egg-info/dependency_links.txt
+phw.egg-info/top_level.txt
