@@ -1,16 +1,23 @@
 #! /usr/bin/python3
 
 import subprocess as sp
-import json,re,string
+import json,re,string,os
 #parsed in each class is where the final data will lie
 class getDmidecode:
-    def __init__(self,command_file):
-        with open(command_file,'r') as cmd:
-            self.cmds=json.load(cmd)
-        self.cmds=self.cmds['dmidecode']
-        data=self.execute()        
-        self.parsed=self.parse(data)
-        #print(data)
+    def __init__(self,command_file='commands.json'):
+        self.path=os.path.dirname(os.path.realpath(__file__))
+        self.path=os.path.join(self.path,'../etc')
+        self.cmd_file =os.path.join(self.path,command_file)
+        if os.environ['USER'] == 'root':
+            with open(self.cmd_file,'r') as cmd:
+                self.cmds=json.load(cmd)
+            self.cmds=self.cmds['dmidecode']
+            data=self.execute()        
+            self.parsed=self.parse(data)
+            #print(data)
+        else:
+            self.parsed={}
+            print('Error! You do not have permission to do this!')
 
     def execute(self):
         proc=sp.Popen(self.cmds,stdout=sp.PIPE,stderr=sp.PIPE)
@@ -237,7 +244,7 @@ class dmidecode_regex:
         return tmp
 
 if __name__ == "__main__":
-    dmidecode=getDmidecode("./commands.json")
+    dmidecode=getDmidecode("commands.json")
     
     for i in dmidecode.parsed.keys():
         print(dmidecode.parsed[i])

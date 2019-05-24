@@ -1,11 +1,15 @@
 #! /usr/bin/python3
 
 import subprocess as sp
-import json,re
+import json,re,os
 #parsed in each class is where the final data will lie
 class getCpu:
-    def __init__(self,command_file):
-        with open(command_file,'r') as cmd:
+    def __init__(self,command_file='commands.json'):
+        self.path=os.path.dirname(os.path.realpath(__file__))
+        self.path=os.path.join(self.path,'../etc')
+        self.cmd_file =os.path.join(self.path,command_file)
+
+        with open(self.cmd_file,'r') as cmd:
             self.cmds=json.load(cmd)
         self.cmds=self.cmds['cpu']
         data=self.execute()        
